@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width", initial-scale=1.0">
+    <title>profile card</title>
+    <style>
+        body
+        {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: darkcyan;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .card
+        {
+            background-color: wheat;
+            border-radius: 15px;
+            width: 350px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(red, green, blue, alpha);
+            animation: fadeln 1s ease forwards;
+        }
+        .card img{
+            height: 120px;
+            border-radius:50%;
+            border-radius: 4px solid black;
+            object-fit: cover;
+            animation:popln 0.8s ease forwords;
+            cursor:pointer;
+        }
+        .card h2
+        {
+            margin:15px 0 5px 0;
+            font-size:22px;
+            color:black;
+        }
+        .card h4
+        {
+            margin:0 0 15px 0;
+            font-weight: normal;
+            color: black;
+        }
+        .card p
+        {
+            font-size: 14px;
+            color: rgb(red, green, blue);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .skills
+        {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .skills span
+        {
+            background-color: darkorchid;
+            color:white;
+            padding:5px 10px;
+            border-radius:12px;
+            font-size:12px;
+            transition:transform 0.3s,background-color 0.3s;
+            cursor:pointer
+        }
+        .skills span:hover{
+            transform:scale(1.1);
+            background-color: palevioletred;
+        }
+        .btns
+        {
+            display:flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .btns button{
+            padding:8px 16px;
+            border:none;
+            border-radius: 8px;
+            cursor:pointer;
+            font-weight: bold;
+            transition: transform 0.3s,backgrond-color 0.3s;
+        }
+        .btn-contact
+        {
+            background-color: fuchsia;
+            color:white;
+        }
+        .btn-contact:hover
+        {
+            background-color: cornflowerblue;
+            transform:scale(1.05);
+        }
+        .btn-cv{
+            background-color: fuchsia;
+            color:aquamarine;
+        }
+        .btn-cv:hover{
+            background-color: cornflowerblue;
+            transform: scale(1.05);
+        }
+        .footer
+        {
+            display:flex;
+            justify-content:space-between;
+            font-size: 12px;
+            color:blueviolet;
+            margin-top:10px;
+        }
+        @keyframes fadeIn{
+            from{opacity:0;transform:translateY(20px);}
+            to{opacity:1;transform:traslateY(0);}
+        }
+        @keyframes popin{
+        from{opacity:0;transform:scale(0.5);}
+        to{opacity:1;transform:scale(1);}
+        }
+    </style>
+</head>
+<body>
+  <div class="card">
+  <img src="image copy.png" alt="My image">
+  <h4>BCA Student</h4>
+
+  <p>
+    I am a BCA student from SJR college.     
+    Learning about new codings always facinates me,   
+    I aspire to build new code.
+  </p>
+  <div class="skills">
+    <span>python programming</span>
+    <span>HTML</span>
+    <span>c++</span>
+    <span>java</span>
+  </div>
+  <div>
+    <button class="btn-contact">Contact me</button>
+    <button class="btn-cv">Download cv</button>
+  </div>
+  </div>
+  <script>
+    document.querySelector(".btn-contact").addEventListener("click",function(){
+        alert("contact Details:\n\nEmail:jamuna252006@gmail.com\nPhone:+91 8123241044");
+    });
+     document.querySelector(".btn-cv").addEventListener("click",function(){
+        alert("cv download will start soon(demo).");
+     });
+     let skills=document.querySelectorAll(".skills span");
+     skills.forEach(function(skill){
+        skill.addEventListener("click",function(){
+            alert("skill:"+this.innerText);
+        });
+     });
+     document.querySelector(".card img").addEventListener("click",function(){
+        alert("HELLO WELCOME TO MY PORTFOLIO!");
+     });
+  </script>
+</body>
+</html>
